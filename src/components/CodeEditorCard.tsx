@@ -25,7 +25,7 @@ const developer = {
   ]
 };
 module.exports = developer;`,
-    stack: `// verifiedStack.js
+    stack: `// techStack.js
 const technologies = {
   frontend: ["React", "Next.js", "Tailwind CSS", "shadcn/ui"],
   backend: ["Node.js", "Express.js", "REST APIs"],
@@ -83,7 +83,7 @@ const technologies = {
             }`}
           >
             <Terminal className="h-3 w-3" />
-            <span>verifiedStack.js</span>
+            <span>techStack.js</span>
           </button>
         </div>
 

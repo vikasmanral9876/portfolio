@@ -5,7 +5,7 @@ export const portfolioData: PortfolioData = {
   title: "Full-Stack / Software Developer",
   headline: "Building Full-Stack Experiences That Solve Real Problems.",
   subheadline:
-    "Electronics & Communication Engineering graduate building modern web applications using React, Next.js, Node.js, databases, REST APIs, and Gemini AI integration.",
+    "Full-Stack Developer building modern web applications with React, Next.js, Node.js, databases, REST APIs, and AI integrations.",
   
   socialLinks: {
     github: "https://github.com/vikasmanral9876",
@@ -359,6 +359,15 @@ export const getEventsByUser = query({
       liveDemoUrl: undefined,
       featured: true,
       projectType: "Hardware / Embedded",
+      imageUrl: "/projects/zone-based-speed-control-car/image.png",
+      screenshots: [
+        {
+          src: "/projects/zone-based-speed-control-car/image.png",
+          label: "Physical Prototype",
+          alt: "Zone Based Automatic Speed Control Car physical hardware prototype with Arduino Nano and sensors",
+          caption: "Physical Prototype — Real embedded system build with Arduino Nano, L298N motor driver, MFRC522 RFID module, and ultrasonic obstacle sensing",
+        },
+      ],
       codeSnippet: `// Arduino Zone Detection & Speed Control Logic
 #include <SPI.h>
 #include <MFRC522.h>

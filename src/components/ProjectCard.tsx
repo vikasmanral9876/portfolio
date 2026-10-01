@@ -226,8 +226,8 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
               screenshots={project.screenshots}
               projectTitle={project.title}
               liveDemoUrl={project.liveDemoUrl}
-              aspectRatio="16/9"
-              variant="card"
+              aspectRatio={isHardware ? '3/2' : '16/9'}
+              variant={isHardware ? 'hardware' : 'card'}
             />
           </div>
         ) : (
@@ -355,7 +355,7 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
             target="_blank"
             rel="noopener noreferrer"
             id={`project-${project.id}-github-btn`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-850 hover:bg-zinc-800 text-zinc-200 border border-zinc-750 text-xs font-medium transition-colors"
+            className={`${!project.liveDemoUrl && isHardware ? 'w-full' : 'flex-1'} inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-850 hover:bg-zinc-800 text-zinc-200 border border-zinc-750 text-xs font-medium transition-colors`}
           >
             <GithubIcon className="h-3.5 w-3.5" />
             <span>GitHub</span>
@@ -373,7 +373,7 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
             <ExternalLink className="h-3.5 w-3.5" />
             <span>Live Demo</span>
           </a>
-        ) : (
+        ) : !isHardware ? (
           <button
             disabled
             title="Live demo link can be provided here"
@@ -382,7 +382,7 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
             <ExternalLink className="h-3.5 w-3.5 opacity-50" />
             <span>Live Demo</span>
           </button>
-        )}
+        ) : null}
       </div>
     </article>
   );
