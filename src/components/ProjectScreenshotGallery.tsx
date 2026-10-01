@@ -50,8 +50,8 @@ export default function ProjectScreenshotGallery({
   const imgHeight = isVideoAspect ? 900 : 891;
   const thumbnailGridClass =
     variant === 'card'
-      ? 'grid grid-cols-2 gap-2 w-full'
-      : 'grid grid-cols-2 sm:grid-cols-4 gap-2 w-full';
+      ? (total === 3 ? 'grid grid-cols-3 gap-1.5 sm:gap-2 w-full' : 'grid grid-cols-2 gap-2 w-full')
+      : (total === 3 ? 'grid grid-cols-3 gap-2 w-full' : 'grid grid-cols-2 sm:grid-cols-4 gap-2 w-full');
 
   const handlePrev = useCallback(() => {
     setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));

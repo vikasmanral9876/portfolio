@@ -229,6 +229,27 @@ const verifyToken = async (req, res, next) => {
       liveDemoUrl: "https://my-ecommerce-project-y969.onrender.com",
       featured: true,
       projectType: "Software",
+      imageUrl: "/projects/ecommerce/home.png",
+      screenshots: [
+        {
+          src: "/projects/ecommerce/home.png",
+          label: "Home",
+          alt: "Full-Stack E-Commerce Application Home page featuring product catalog and shopping cart",
+          caption: "Home — Product catalog browsing, category filtering, and shopping storefront",
+        },
+        {
+          src: "/projects/ecommerce/checkout.png",
+          label: "Checkout",
+          alt: "Full-Stack E-Commerce Application Checkout page featuring order review and delivery selection",
+          caption: "Checkout — Order review, delivery address selection, and payment options",
+        },
+        {
+          src: "/projects/ecommerce/order.png",
+          label: "Order Tracking",
+          alt: "Full-Stack E-Commerce Application Order Tracking page featuring real-time delivery status",
+          caption: "Order Tracking — Order confirmation and live delivery tracking status",
+        },
+      ],
       codeSnippet: `// Express & Sequelize Order Controller
 const { Order, OrderItem, Product } = require("../models");
 
