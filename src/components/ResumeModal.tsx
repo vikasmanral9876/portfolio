@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { portfolioData } from '@/data/portfolioData';
-import { X, Download, Printer, FileText, CheckCircle2, GraduationCap, Code2, Mail } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { X, Download, ExternalLink, FileText } from 'lucide-react';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -11,8 +9,6 @@ interface ResumeModalProps {
 }
 
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
-  const { name, title, headline, education, projects, skillCategories, socialLinks } = portfolioData;
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -33,195 +29,114 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
   if (!isOpen) return null;
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <div
       id="resume-modal-overlay"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="resume-modal-title"
     >
       <div
         id="resume-modal-container"
-        className="relative w-full max-w-4xl max-h-[90vh] bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-zinc-100"
+        className="relative w-full max-w-5xl h-[88vh] sm:h-[90vh] bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-zinc-100"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Bar */}
-        <div className="flex items-center justify-between px-6 py-3.5 border-b border-zinc-850 bg-zinc-900/60">
-          <div className="flex items-center gap-2">
-            <FileText className="h-4 w-4 text-sky-400" />
-            <span className="text-xs font-mono font-medium text-zinc-300">
-              Vikas_Manral_Resume_Preview.pdf
+        <div className="flex items-center justify-between px-3.5 sm:px-6 py-3 border-b border-zinc-800 bg-zinc-900/80 backdrop-blur-sm shrink-0">
+          <div className="flex items-center gap-2 min-w-0 pr-2">
+            <FileText className="h-4 w-4 text-sky-400 shrink-0" />
+            <span
+              id="resume-modal-title"
+              className="text-xs sm:text-sm font-mono font-medium text-zinc-200 truncate"
+              title="Vikas_Manral_Resume.pdf"
+            >
+              Vikas_Manral_Resume.pdf
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handlePrint}
-              id="resume-print-btn"
-              title="Print Resume"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-750 text-zinc-300 text-xs font-mono transition-colors cursor-pointer"
-            >
-              <Printer className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">Print</span>
-            </button>
-
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            {/* Open in New Tab Button */}
             <a
-              href="/resume.pdf"
-              download="Vikas_Manral_Resume.pdf"
-              id="resume-download-direct-btn"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-semibold transition-colors shadow-xs"
+              href="/resume/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="resume-open-tab-btn"
+              title="Open resume in new tab"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-xs font-mono transition-colors border border-zinc-700/60 cursor-pointer"
             >
-              <Download className="h-3.5 w-3.5" />
-              <span>Download PDF</span>
+              <ExternalLink className="h-3.5 w-3.5 text-sky-400" />
+              <span className="hidden sm:inline">Open in Tab</span>
             </a>
 
+            {/* Direct Download Button */}
+            <a
+              href="/resume/resume.pdf"
+              download="Vikas-Manral-Resume.pdf"
+              id="resume-download-btn"
+              title="Download Vikas Manral Resume PDF"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-semibold transition-all shadow-xs active:scale-95 cursor-pointer"
+            >
+              <Download className="h-3.5 w-3.5" />
+              <span className="hidden xs:inline sm:inline">Download PDF</span>
+              <span className="inline xs:hidden sm:hidden">Download</span>
+            </a>
+
+            {/* Close Button */}
             <button
               onClick={onClose}
               id="close-resume-modal-btn"
               aria-label="Close Resume Preview"
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors ml-1 cursor-pointer"
+              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors ml-0.5 sm:ml-1 cursor-pointer"
             >
               <X className="h-5 w-5" />
             </button>
           </div>
         </div>
 
-        {/* Modal Scrollable Resume Content */}
-        <div className="overflow-y-auto p-6 sm:p-10 space-y-8 font-sans text-xs sm:text-sm">
-          
-          {/* Header */}
-          <div className="border-b border-zinc-800 pb-6 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-                {name}
-              </h1>
-              <p className="text-sm font-mono text-sky-400 mt-1 font-medium">
-                {title}
-              </p>
-              <p className="text-xs text-zinc-400 mt-1 max-w-xl">
-                {headline}
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center sm:items-end text-xs font-mono text-zinc-400 space-y-1">
-              <span className="flex items-center gap-1.5">
-                <Mail className="h-3.5 w-3.5 text-zinc-400" />
-                {socialLinks.email}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <GithubIcon className="h-3.5 w-3.5 text-zinc-400" />
-                github.com/vikasmanral9876
-              </span>
-              <a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-sky-400 transition-colors"
-              >
-                <LinkedinIcon className="h-3.5 w-3.5 text-zinc-400" />
-                <span>linkedin.com/in/vikas-manral-942aa6201</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Education Section */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold flex items-center gap-2">
-              <GraduationCap className="h-4 w-4" />
-              <span>Education</span>
-            </h2>
-            <div className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-850">
-              <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
-                <h3 className="text-sm font-bold text-white">
-                  {education.degree}
+        {/* Embedded PDF Viewer Area */}
+        <div className="relative flex-1 w-full bg-zinc-900/50 overflow-hidden flex flex-col items-center justify-center">
+          <object
+            data="/resume/resume.pdf"
+            type="application/pdf"
+            className="w-full h-full rounded-b-2xl border-0"
+            aria-label="Vikas Manral Resume PDF"
+          >
+            {/* Graceful Fallback if browser/device cannot render embedded PDF */}
+            <div className="flex flex-col items-center justify-center h-full p-6 sm:p-8 text-center bg-zinc-950 text-zinc-300 space-y-4">
+              <div className="h-14 w-14 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sky-400 shadow-md">
+                <FileText className="h-7 w-7" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-sm sm:text-base font-semibold text-white">
+                  PDF Preview Unavailable
                 </h3>
-                <span className="text-xs font-mono text-zinc-400">{education.duration}</span>
+                <p className="text-xs text-zinc-400 max-w-sm">
+                  Your browser or device does not support embedded PDF viewing. You can open or download the PDF file directly.
+                </p>
               </div>
-              <p className="text-xs text-zinc-300 mt-1">
-                {education.institution} • {education.university} ({education.location})
-              </p>
-              <div className="mt-2.5 flex flex-wrap gap-1.5">
-                {education.coursework.map((course) => (
-                  <span
-                    key={course}
-                    className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-300"
-                  >
-                    {course}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Technical Skills Section */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold flex items-center gap-2">
-              <Code2 className="h-4 w-4" />
-              <span>Technical Skills</span>
-            </h2>
-            <div className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-850 space-y-2.5">
-              {skillCategories.map((cat) => (
-                <div key={cat.id} className="text-xs flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3">
-                  <span className="font-mono text-zinc-400 font-semibold w-40 shrink-0">
-                    {cat.title}:
-                  </span>
-                  <span className="text-zinc-200">
-                    {cat.skills.map((s) => s.name).join(', ')}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Featured Full-Stack Projects */}
-          <div className="space-y-3">
-            <h2 className="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold flex items-center gap-2">
-              <FileText className="h-4 w-4" />
-              <span>Featured Full-Stack Projects</span>
-            </h2>
-            <div className="space-y-3">
-              {projects.map((proj) => (
-                <div
-                  key={proj.id}
-                  className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-850 space-y-2"
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <a
+                  href="/resume/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-850 text-zinc-200 border border-zinc-800 hover:border-zinc-700 text-xs font-mono transition-colors"
                 >
-                  <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
-                    <h3 className="text-sm font-bold text-white">
-                      {proj.title}
-                    </h3>
-                    <span className="text-[11px] font-mono text-sky-400">
-                      {proj.tags.slice(0, 4).join(' • ')}
-                    </span>
-                  </div>
-                  <p className="text-xs text-zinc-400 leading-relaxed">
-                    {proj.description}
-                  </p>
-                  <ul className="space-y-1">
-                    {proj.features.slice(0, 2).map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2 text-xs text-zinc-300">
-                        <CheckCircle2 className="h-3 w-3 text-sky-400 shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                  <ExternalLink className="h-4 w-4 text-sky-400" />
+                  <span>Open in New Tab</span>
+                </a>
+                <a
+                  href="/resume/resume.pdf"
+                  download="Vikas-Manral-Resume.pdf"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-semibold transition-colors"
+                >
+                  <Download className="h-4 w-4" />
+                  <span>Download PDF</span>
+                </a>
+              </div>
             </div>
-          </div>
-
-          {/* Development Focus & DSA */}
-          <div className="p-4 rounded-xl bg-zinc-900/20 border border-zinc-800/80 text-xs text-zinc-400 font-mono space-y-1">
-            <div className="text-zinc-200 font-semibold">
-              // Core Focus & Problem Solving
-            </div>
-            <p>
-              Mastering Data Structures & Algorithms in Java (Arrays, Linked Lists, Trees, Dynamic Programming). Dedicated to writing robust, maintainable full-stack code adhering to clean architecture.
-            </p>
-          </div>
-
+          </object>
         </div>
       </div>
     </div>
