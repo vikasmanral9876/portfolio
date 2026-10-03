@@ -50,7 +50,8 @@ export const portfolioData: PortfolioData = {
     {
       id: "frontend",
       title: "Frontend",
-      description: "Developing modern, component-driven client interfaces.",
+      filterLabel: "Frontend",
+      description: "Building responsive, component-driven interfaces for modern web applications.",
       icon: "Layout",
       skills: [
         { name: "HTML5", isKeySkill: true },
@@ -60,23 +61,27 @@ export const portfolioData: PortfolioData = {
         { name: "Next.js", isKeySkill: true },
         { name: "Tailwind CSS", isKeySkill: true },
         { name: "shadcn/ui", isKeySkill: true },
+        { name: "Responsive Design", isKeySkill: true },
       ],
     },
     {
       id: "backend",
       title: "Backend & APIs",
-      description: "Building server-side logic, controllers, and REST services.",
+      filterLabel: "Backend",
+      description: "Building server-side logic, REST APIs, middleware, and application services.",
       icon: "Server",
       skills: [
         { name: "Node.js", isKeySkill: true },
         { name: "Express.js", isKeySkill: true },
         { name: "REST APIs", isKeySkill: true },
+        { name: "API Integration", isKeySkill: true },
       ],
     },
     {
-      id: "database",
-      title: "Database",
-      description: "Data storage, models, and queries across NoSQL and SQL.",
+      id: "data",
+      title: "Data & Persistence",
+      filterLabel: "Data",
+      description: "Working with application data, database models, queries, and persistence layers.",
       icon: "Database",
       skills: [
         { name: "MongoDB", isKeySkill: true },
@@ -87,7 +92,8 @@ export const portfolioData: PortfolioData = {
     {
       id: "auth",
       title: "Authentication",
-      description: "Implementing secure authentication and protected routes.",
+      filterLabel: "Authentication",
+      description: "Implementing authentication and protected application flows.",
       icon: "ShieldCheck",
       skills: [
         { name: "JWT", isKeySkill: true },
@@ -97,7 +103,8 @@ export const portfolioData: PortfolioData = {
     {
       id: "ai",
       title: "AI Integration",
-      description: "Connecting AI capabilities to full-stack applications.",
+      filterLabel: "AI",
+      description: "Integrating AI APIs into practical application workflows.",
       icon: "Bot",
       skills: [
         { name: "Gemini / AI API Integration", isKeySkill: true },
@@ -105,20 +112,23 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "programming",
-      title: "Programming Languages",
-      description: "Core programming and algorithmic foundations.",
+      title: "Programming & DSA",
+      filterLabel: "Programming",
+      description: "Programming fundamentals and algorithmic problem solving.",
       icon: "Terminal",
       skills: [
         { name: "Java", isKeySkill: true },
         { name: "Python", isKeySkill: false },
         { name: "C", isKeySkill: false },
+        { name: "JavaScript", isKeySkill: true },
         { name: "Data Structures & Algorithms", isKeySkill: true },
       ],
     },
     {
       id: "tools",
-      title: "Tools",
-      description: "Development environment, version control, and API testing.",
+      title: "Developer Tools",
+      filterLabel: "Tools",
+      description: "Development, version control, debugging, and API testing tools.",
       icon: "Wrench",
       skills: [
         { name: "Git", isKeySkill: true },

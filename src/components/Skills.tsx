@@ -57,7 +57,7 @@ export default function Skills() {
               Skills & Technology Stack
             </h2>
             <p className="text-sm text-zinc-400 mt-1.5 max-w-xl">
-              Categorized technologies utilized across the software development lifecycle, from client interface to server systems and data architecture.
+              Technologies I use across frontend development, backend APIs, databases, authentication, AI integration, and problem solving.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export default function Skills() {
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
-                {cat.title.split(' ')[0]}
+                {cat.filterLabel || cat.title.split(' ')[0]}
               </button>
             ))}
           </div>
@@ -141,7 +141,7 @@ export default function Skills() {
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
             <span>
-              <strong>Engineering Practice:</strong> Modular code structure, component-driven design, and API testing with Postman.
+              <strong>Engineering Practice:</strong> Maintainable code, component-driven UI, REST API integration, debugging, and structured problem solving.
             </span>
           </div>
           <span className="font-mono text-zinc-500 text-[11px]">

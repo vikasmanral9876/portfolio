@@ -33,6 +33,7 @@ export interface SkillCategory {
   title: string;
   description: string;
   icon: string;
+  filterLabel?: string;
   skills: SkillItem[];
 }
 
