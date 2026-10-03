@@ -30,10 +30,10 @@ export default function About() {
             About Me
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            Engineering Foundation to Full-Stack Software
+            Building Software with an Engineering Mindset
           </h2>
           <p className="text-sm text-zinc-400 mt-1.5 max-w-xl">
-            From Electronics & Communication Engineering to building end-to-end full-stack web systems.
+            Full-Stack developer focused on building practical web applications and AI-powered workflows.
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function About() {
                 href="#skills"
                 className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-400 hover:text-sky-300 font-semibold group"
               >
-                <span>Explore technical capabilities</span>
+                <span>View technical skills</span>
                 <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

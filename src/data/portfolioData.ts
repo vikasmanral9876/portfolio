@@ -16,31 +16,31 @@ export const portfolioData: PortfolioData = {
 
   about: {
     summary:
-      "I am an Electronics & Communication Engineering graduate building my career as a Full-Stack / Software Developer. My engineering education has provided a strong foundation in first-principles thinking, analytical reasoning, and disciplined problem solving.",
+      "I’m a Full-Stack / Software Developer with a B.Tech background in Electronics & Communication Engineering. I build practical web applications using React, Next.js, Node.js, Express.js, databases, REST APIs, and AI integrations.",
     story: [
-      "During my engineering degree at I.T.S Engineering College, I gained hands-on experience bridging hardware and software through embedded systems projects, such as building a physical RFID-controlled vehicle speed management car with Arduino.",
-      "In software development, I build end-to-end full-stack applications with React, Next.js, Node.js, and Express.js, integrating databases including MongoDB, Convex, and Sequelize. I have also developed AI-assisted applications integrating Gemini APIs for practical workflows such as resume analysis and interview preparation.",
-      "Alongside building web applications, I actively practice Data Structures & Algorithms in Java to maintain clean algorithmic thinking, optimal time and space complexity, and structured code quality.",
+      "My ECE background gave me hands-on experience connecting hardware and software through embedded systems, including a physical RFID-based automatic speed-control car built with Arduino.",
+      "My current focus is full-stack development, where I build end-to-end applications with modern frontend, backend, database, authentication, and API architectures. I’ve also built AI-assisted applications using Gemini APIs for practical workflows such as resume analysis and interview preparation.",
+      "Alongside development, I practice Data Structures & Algorithms in Java, focusing on problem solving, time and space complexity, and writing efficient, maintainable code.",
     ],
     coreValues: [
       {
-        title: "Engineering Foundation",
-        desc: "Electronics & Communication background providing disciplined problem breakdown and hardware-software awareness.",
+        title: "Software Engineering",
+        desc: "Building maintainable applications across frontend, backend, databases, APIs, and authentication.",
         icon: "Cpu",
       },
       {
         title: "Full-Stack Web Development",
-        desc: "Building complete applications with React, Next.js, Node.js, Express.js, and relational or NoSQL databases.",
+        desc: "React, Next.js, Node.js, Express.js, REST APIs, MongoDB, and Convex.",
         icon: "Layers",
       },
       {
         title: "AI API Integration",
-        desc: "Integrating Gemini / AI API endpoints into practical web applications with backend controllers and secure authentication.",
+        desc: "Integrating Gemini and other AI APIs into practical application workflows.",
         icon: "Sparkles",
       },
       {
         title: "DSA in Java",
-        desc: "Regular algorithmic problem-solving practice in Java focusing on clean logic and complexity analysis.",
+        desc: "Regular problem-solving practice focused on algorithms, complexity, and clean implementation.",
         icon: "Binary",
       },
     ],
@@ -494,7 +494,7 @@ void loop() {
   ],
 
   education: {
-    degree: "B.Tech / B.E. in Electronics & Communication Engineering",
+    degree: "B.Tech in Electronics & Communication Engineering",
     field: "Electronics & Communication Engineering",
     institution: "I.T.S Engineering College, Greater Noida",
     university: "Dr. A.P.J. Abdul Kalam Technical University (AKTU)",
