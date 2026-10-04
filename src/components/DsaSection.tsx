@@ -19,7 +19,7 @@ export default function DsaSection() {
               Data Structures & Algorithms (Java)
             </h2>
             <p className="text-sm text-zinc-400 mt-1 max-w-xl">
-              Consistent focus on time and space complexity, algorithmic thinking, and clean object-oriented problem solving using Java.
+              Consistent Java-based practice focused on data structures, algorithmic problem solving, complexity analysis, and writing clean, efficient solutions.
             </p>
           </div>
 
@@ -94,7 +94,7 @@ export default function DsaSection() {
                   <Check className="h-3 w-3 text-emerald-400" />
                   Java Implementations
                 </span>
-                <span>O(log N) - O(N) focus</span>
+                <span>Problem Solving</span>
               </div>
             </div>
           ))}
@@ -107,9 +107,9 @@ export default function DsaSection() {
               <Code2 className="h-3.5 w-3.5" />
             </div>
             <div>
-              <h4 className="text-xs font-semibold text-zinc-200">First-Principles Analysis</h4>
+              <h4 className="text-xs font-semibold text-zinc-200">Problem Decomposition</h4>
               <p className="text-[11px] text-zinc-400 mt-0.5">
-                Breaking down problem constraints and edge cases before drafting code.
+                Breaking problems into smaller constraints, cases, and manageable solution steps before implementation.
               </p>
             </div>
           </div>
@@ -119,9 +119,9 @@ export default function DsaSection() {
               <Binary className="h-3.5 w-3.5" />
             </div>
             <div>
-              <h4 className="text-xs font-semibold text-zinc-200">Complexity Trade-Offs</h4>
+              <h4 className="text-xs font-semibold text-zinc-200">Complexity Analysis</h4>
               <p className="text-[11px] text-zinc-400 mt-0.5">
-                Evaluating space versus time complexity to select the most efficient structure.
+                Evaluating time and space complexity to understand solution efficiency and trade-offs.
               </p>
             </div>
           </div>
@@ -131,9 +131,9 @@ export default function DsaSection() {
               <Cpu className="h-3.5 w-3.5" />
             </div>
             <div>
-              <h4 className="text-xs font-semibold text-zinc-200">Clean OOP Code in Java</h4>
+              <h4 className="text-xs font-semibold text-zinc-200">Clean Java Solutions</h4>
               <p className="text-[11px] text-zinc-400 mt-0.5">
-                Structuring readable classes, modular helper methods, and descriptive naming.
+                Writing readable Java implementations with clear structure, reusable logic, and appropriate data structures.
               </p>
             </div>
           </div>

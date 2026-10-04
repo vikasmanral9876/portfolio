@@ -467,39 +467,45 @@ void loop() {
   dsaTopics: [
     {
       title: "Arrays & Strings",
-      description: "Two-pointer techniques, sliding window, prefix sums, and element manipulation.",
+      description:
+        "Practicing array and string problems involving traversal, two pointers, sliding windows, prefix sums, and manipulation.",
       concepts: ["Two Pointers", "Sliding Window", "Prefix Sums", "String Parsing"],
-      status: "Active Practice",
+      status: "Java / DSA",
     },
     {
       title: "Linked Lists",
-      description: "Singly linked lists, cycle detection, list traversal, and pointer manipulation.",
+      description:
+        "Working with linked-list traversal, pointer manipulation, reversals, merging, and cycle detection.",
       concepts: ["Traversal", "Reversals", "Cycle Detection", "List Merging"],
-      status: "Active Practice",
+      status: "Java / DSA",
     },
     {
       title: "Stacks & Queues",
-      description: "LIFO and FIFO operations, parenthesis validation, and queue-based processing.",
+      description:
+        "Practicing LIFO and FIFO data structures through common validation, traversal, and processing problems.",
       concepts: ["Stack Operations", "Valid Parentheses", "Queue Processing"],
-      status: "Active Practice",
+      status: "Java / DSA",
     },
     {
       title: "Trees & Binary Search Trees",
-      description: "Tree traversals, binary search tree properties, search and insertion.",
+      description:
+        "Practicing tree traversal, binary search tree properties, searching, insertion, and recursive tree problems.",
       concepts: ["Inorder Traversal", "Preorder Traversal", "Postorder Traversal", "BST Search"],
-      status: "Active Practice",
+      status: "Java / DSA",
     },
     {
       title: "Searching & Sorting",
-      description: "Linear and binary search, comparison-based sorting algorithms.",
+      description:
+        "Implementing and analyzing common searching and comparison-based sorting algorithms.",
       concepts: ["Binary Search", "Merge Sort", "Quick Sort"],
-      status: "Active Practice",
+      status: "Java / DSA",
     },
     {
       title: "Recursion & Dynamic Programming",
-      description: "Recursive problem breakdown, memoization, and overlapping subproblems.",
+      description:
+        "Practicing recursive problem decomposition, memoization, overlapping subproblems, and structured solution design.",
       concepts: ["Recursion", "Memoization", "Subproblem Breakdown"],
-      status: "Active Practice",
+      status: "Java / DSA",
     },
   ],
 
