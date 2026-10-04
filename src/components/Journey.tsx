@@ -30,10 +30,10 @@ export default function Journey() {
             Development Journey
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            Engineering & Technical Progression
+            From Engineering Foundations to Full-Stack Development
           </h2>
           <p className="text-sm text-zinc-400 mt-1 max-w-xl">
-            A transparent overview of core development phases, practical project architecture, embedded hardware training, and DSA problem solving.
+            A transparent overview of my development focus, practical project work, embedded systems background, and continued problem-solving practice.
           </p>
         </div>
 
