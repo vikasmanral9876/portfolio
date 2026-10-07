@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { X, Download, ExternalLink, FileText } from 'lucide-react';
 
 interface ResumeModalProps {
@@ -9,6 +9,9 @@ interface ResumeModalProps {
 }
 
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -17,6 +20,9 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
+      setTimeout(() => {
+        closeButtonRef.current?.focus();
+      }, 50);
     } else {
       document.body.style.overflow = '';
     }
@@ -39,20 +45,21 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       aria-labelledby="resume-modal-title"
     >
       <div
+        ref={modalRef}
         id="resume-modal-container"
-        className="relative w-full max-w-5xl h-[88vh] sm:h-[90vh] bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-zinc-100"
+        className="relative w-full max-w-5xl h-[92vh] sm:h-[90vh] bg-zinc-950 border border-zinc-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-zinc-100"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Bar */}
-        <div className="flex items-center justify-between px-3.5 sm:px-6 py-3 border-b border-zinc-800 bg-zinc-900/80 backdrop-blur-sm shrink-0">
+        <div className="flex items-center justify-between px-3.5 sm:px-6 py-3 border-b border-zinc-800 bg-zinc-900/90 backdrop-blur-sm shrink-0">
           <div className="flex items-center gap-2 min-w-0 pr-2">
-            <FileText className="h-4 w-4 text-sky-400 shrink-0" />
+            <FileText className="h-4 w-4 text-sky-400 shrink-0" aria-hidden="true" />
             <span
               id="resume-modal-title"
               className="text-xs sm:text-sm font-mono font-medium text-zinc-200 truncate"
-              title="Vikas_Manral_Resume.pdf"
+              title="Vikas-Manral-Resume.pdf"
             >
-              Vikas_Manral_Resume.pdf
+              Vikas-Manral-Resume.pdf
             </span>
           </div>
 
@@ -64,9 +71,10 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               rel="noopener noreferrer"
               id="resume-open-tab-btn"
               title="Open resume in new tab"
-              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white text-xs font-mono transition-colors border border-zinc-700/60 cursor-pointer"
+              aria-label="Open resume in new tab"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-750 text-zinc-300 hover:text-white text-xs font-mono transition-colors border border-zinc-700/60 cursor-pointer focus:outline-hidden focus:ring-1 focus:ring-sky-500"
             >
-              <ExternalLink className="h-3.5 w-3.5 text-sky-400" />
+              <ExternalLink className="h-3.5 w-3.5 text-sky-400" aria-hidden="true" />
               <span className="hidden sm:inline">Open in Tab</span>
             </a>
 
@@ -76,67 +84,33 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               download="Vikas-Manral-Resume.pdf"
               id="resume-download-btn"
               title="Download Vikas Manral Resume PDF"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-semibold transition-all shadow-xs active:scale-95 cursor-pointer"
+              aria-label="Download Resume"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-semibold transition-all shadow-xs active:scale-95 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-sky-500"
             >
-              <Download className="h-3.5 w-3.5" />
-              <span className="hidden xs:inline sm:inline">Download PDF</span>
-              <span className="inline xs:hidden sm:hidden">Download</span>
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
+              <span>Download Resume</span>
             </a>
 
             {/* Close Button */}
             <button
+              ref={closeButtonRef}
               onClick={onClose}
               id="close-resume-modal-btn"
               aria-label="Close Resume Preview"
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors ml-0.5 sm:ml-1 cursor-pointer"
+              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors ml-0.5 sm:ml-1 cursor-pointer focus:outline-hidden focus:ring-1 focus:ring-zinc-400"
             >
-              <X className="h-5 w-5" />
+              <X className="h-5 w-5" aria-hidden="true" />
             </button>
           </div>
         </div>
 
         {/* Embedded PDF Viewer Area */}
-        <div className="relative flex-1 w-full bg-zinc-900/50 overflow-hidden flex flex-col items-center justify-center">
-          <object
-            data="/resume/resume.pdf"
-            type="application/pdf"
-            className="w-full h-full rounded-b-2xl border-0"
-            aria-label="Vikas Manral Resume PDF"
-          >
-            {/* Graceful Fallback if browser/device cannot render embedded PDF */}
-            <div className="flex flex-col items-center justify-center h-full p-6 sm:p-8 text-center bg-zinc-950 text-zinc-300 space-y-4">
-              <div className="h-14 w-14 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-sky-400 shadow-md">
-                <FileText className="h-7 w-7" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-sm sm:text-base font-semibold text-white">
-                  PDF Preview Unavailable
-                </h3>
-                <p className="text-xs text-zinc-400 max-w-sm">
-                  Your browser or device does not support embedded PDF viewing. You can open or download the PDF file directly.
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-                <a
-                  href="/resume/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-850 text-zinc-200 border border-zinc-800 hover:border-zinc-700 text-xs font-mono transition-colors"
-                >
-                  <ExternalLink className="h-4 w-4 text-sky-400" />
-                  <span>Open in New Tab</span>
-                </a>
-                <a
-                  href="/resume/resume.pdf"
-                  download="Vikas-Manral-Resume.pdf"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-semibold transition-colors"
-                >
-                  <Download className="h-4 w-4" />
-                  <span>Download PDF</span>
-                </a>
-              </div>
-            </div>
-          </object>
+        <div className="relative flex-1 w-full bg-zinc-900 overflow-hidden flex flex-col">
+          <iframe
+            src="/resume/resume.pdf#view=FitH"
+            title="Vikas Manral Resume PDF Preview"
+            className="w-full h-full border-0 bg-zinc-900"
+          />
         </div>
       </div>
     </div>

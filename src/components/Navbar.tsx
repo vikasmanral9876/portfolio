@@ -102,6 +102,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           <button
             onClick={onOpenResume}
             id="nav-resume-btn"
+            aria-label="Open Resume Preview"
             className="flex items-center gap-1.5 text-xs font-medium px-3.5 py-2 rounded-lg bg-zinc-100 text-zinc-950 hover:bg-white transition-all shadow-sm hover:shadow hover:shadow-zinc-200/10 active:scale-95 cursor-pointer"
           >
             <FileText className="h-3.5 w-3.5" />
@@ -115,6 +116,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           <button
             onClick={onOpenResume}
             id="mobile-resume-btn"
+            aria-label="Open Resume Preview"
             className="text-xs font-medium px-2.5 py-1.5 rounded-md bg-zinc-100 text-zinc-950 hover:bg-white"
           >
             Resume
