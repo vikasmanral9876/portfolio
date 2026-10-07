@@ -517,6 +517,8 @@ void loop() {
     location: "Greater Noida, Uttar Pradesh, India",
     duration: "Undergraduate Degree",
     focus: "Electronics & Communication Engineering",
+    description:
+      "B.Tech in Electronics & Communication Engineering with a strong foundation in programming, computer science, and systems engineering.",
     coursework: [
       "Data Structures & Algorithms",
       "Object-Oriented Programming",
@@ -526,10 +528,10 @@ void loop() {
       "Signals & Systems",
     ],
     skillsGained: [
-      "First-principles analytical problem solving",
-      "Hardware-software integration experience",
-      "Systematic debugging and testing approach",
-      "Continuous learning and software engineering transition",
+      "Analytical problem solving",
+      "Hardware-software integration",
+      "Debugging and systematic testing",
+      "Software development fundamentals",
     ],
   },
 };

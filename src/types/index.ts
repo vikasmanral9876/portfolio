@@ -65,6 +65,7 @@ export interface EducationData {
   focus: string;
   coursework: string[];
   skillsGained: string[];
+  description?: string;
 }
 
 export interface SocialLinks {

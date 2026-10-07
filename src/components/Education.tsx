@@ -15,10 +15,10 @@ export default function Education() {
             Education
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            Formal Education & Engineering Training
+            Education & Engineering Foundation
           </h2>
           <p className="text-sm text-zinc-400 mt-1.5 max-w-xl">
-            Undergraduate engineering curriculum emphasizing mathematical problem solving, systems architecture, and core computing foundations.
+            {education.description || "B.Tech in Electronics & Communication Engineering with a strong foundation in programming, computer science, and systems engineering."}
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function Education() {
             <div>
               <div className="flex items-center gap-2 mb-3 text-xs font-mono text-zinc-300 uppercase tracking-wider font-semibold">
                 <Award className="h-3.5 w-3.5 text-emerald-400" />
-                <span>Applied Engineering Skills</span>
+                <span>Engineering & Software Foundations</span>
               </div>
               <ul className="space-y-2">
                 {education.skillsGained.map((skill) => (
@@ -91,8 +91,8 @@ export default function Education() {
 
           {/* ECE to Software Footnote */}
           <div className="mt-8 p-4 rounded-xl bg-zinc-950/60 border border-zinc-850/80 text-xs text-zinc-400 leading-relaxed font-sans">
-            <span className="text-zinc-200 font-semibold">Engineering Foundation in Software: </span>
-            A background in Electronics & Communication provides a concrete understanding of memory hierarchy, register-level CPU operations, and network protocol layers, yielding code written with efficiency and resource-awareness.
+            <span className="text-zinc-200 font-semibold">Engineering Perspective: </span>
+            My ECE background strengthens my understanding of systems, debugging, and hardware-software interaction while my current focus is full-stack software development.
           </div>
         </div>
 
