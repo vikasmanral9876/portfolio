@@ -9,7 +9,7 @@ export const portfolioData: PortfolioData = {
   
   socialLinks: {
     github: "https://github.com/vikasmanral9876",
-    linkedin: "https://www.linkedin.com/in/vikas-manral-942aa6201",
+    linkedin: "https://www.linkedin.com/in/vikas-manral",
     email: "vikasmanral9876@gmail.com",
     leetcode: "https://leetcode.com/vikasmanral",
   },
