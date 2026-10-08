@@ -15,6 +15,8 @@ export interface ProjectItem {
   category: 'Full-Stack' | 'AI Applications' | 'Embedded Systems' | 'All';
   githubUrl?: string;
   liveDemoUrl?: string;
+  demoUrl?: string;
+  demoVideoUrl?: string;
   featured: boolean;
   projectType?: 'Software' | 'Hardware / Embedded';
   codeSnippet?: string;

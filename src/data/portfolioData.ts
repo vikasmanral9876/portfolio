@@ -365,7 +365,7 @@ export const getEventsByUser = query({
         "C",
       ],
       category: "Embedded Systems",
-      githubUrl: "https://github.com/vikasmanral9876",
+      demoUrl: "https://youtu.be/VtNXw1GTl7U?si=lkVN7Ho9zt2fT8tI",
       liveDemoUrl: undefined,
       featured: true,
       projectType: "Hardware / Embedded",

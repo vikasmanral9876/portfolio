@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ExternalLink, Check, Sparkles, Cpu, Globe, Laptop, Image as ImageIcon, ChevronDown, ChevronUp } from 'lucide-react';
+import { ExternalLink, Check, Sparkles, Cpu, Globe, Laptop, Image as ImageIcon, ChevronDown, ChevronUp, Play } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { ProjectItem } from '@/types';
 import ProjectScreenshotGallery from './ProjectScreenshotGallery';
@@ -13,6 +13,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, isPrimary = false }: ProjectCardProps) {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
+  const demoVideoUrl = project.demoUrl || project.demoVideoUrl;
 
   const getDisplayUrl = () => {
     if (project.liveDemoUrl) {
@@ -170,7 +171,7 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
             </div>
           </div>
 
-          {/* Action Buttons: GitHub & Live Demo */}
+          {/* Action Buttons: GitHub, Demo Video & Live Demo */}
           <div className="pt-4 border-t border-zinc-850 flex items-center gap-3">
             {project.githubUrl && (
               <a
@@ -185,6 +186,19 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
               </a>
             )}
 
+            {demoVideoUrl && (
+              <a
+                href={demoVideoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                id={`project-${project.id}-video-btn`}
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-semibold transition-all shadow-sm active:scale-95 focus:ring-1 focus:ring-sky-400"
+              >
+                <Play className="h-3.5 w-3.5" fill="currentColor" />
+                <span>Demo Video</span>
+              </a>
+            )}
+
             {project.liveDemoUrl ? (
               <a
                 href={project.liveDemoUrl}
@@ -196,7 +210,7 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
                 <ExternalLink className="h-3.5 w-3.5" />
                 <span>Live Demo</span>
               </a>
-            ) : (
+            ) : !demoVideoUrl ? (
               <button
                 disabled
                 title="Live deployment URL can be provided here"
@@ -205,7 +219,7 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
                 <ExternalLink className="h-3.5 w-3.5 opacity-50" />
                 <span>Live Demo</span>
               </button>
-            )}
+            ) : null}
           </div>
         </div>
       </article>
@@ -347,7 +361,7 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
         </div>
       </div>
 
-      {/* Card Action Buttons: Keep GitHub and Live Demo */}
+      {/* Card Action Buttons: GitHub, Demo Video, and Live Demo */}
       <div className="p-5 pt-0 mt-1 flex items-center gap-2.5">
         {project.githubUrl && (
           <a
@@ -355,10 +369,23 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
             target="_blank"
             rel="noopener noreferrer"
             id={`project-${project.id}-github-btn`}
-            className={`${!project.liveDemoUrl && isHardware ? 'w-full' : 'flex-1'} inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-850 hover:bg-zinc-800 text-zinc-200 border border-zinc-750 text-xs font-medium transition-colors`}
+            className={`${!project.liveDemoUrl && !demoVideoUrl ? 'w-full' : 'flex-1'} inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-850 hover:bg-zinc-800 text-zinc-200 border border-zinc-750 text-xs font-medium transition-colors`}
           >
             <GithubIcon className="h-3.5 w-3.5" />
             <span>GitHub</span>
+          </a>
+        )}
+
+        {demoVideoUrl && (
+          <a
+            href={demoVideoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            id={`project-${project.id}-video-btn`}
+            className={`${!project.githubUrl && !project.liveDemoUrl ? 'w-full' : 'flex-1'} inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-semibold transition-all shadow-sm active:scale-95`}
+          >
+            <Play className="h-3.5 w-3.5" fill="currentColor" />
+            <span>Demo Video</span>
           </a>
         )}
 
@@ -368,12 +395,12 @@ export default function ProjectCard({ project, isPrimary = false }: ProjectCardP
             target="_blank"
             rel="noopener noreferrer"
             id={`project-${project.id}-demo-btn`}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-semibold transition-all shadow-sm active:scale-95"
+            className={`${!project.githubUrl && !demoVideoUrl ? 'w-full' : 'flex-1'} inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-semibold transition-all shadow-sm active:scale-95`}
           >
             <ExternalLink className="h-3.5 w-3.5" />
             <span>Live Demo</span>
           </a>
-        ) : !isHardware ? (
+        ) : !isHardware && !demoVideoUrl ? (
           <button
             disabled
             title="Live demo link can be provided here"
