@@ -40,7 +40,7 @@ export default function DsaSection() {
             )}
 
             <a
-              href={socialLinks.github}
+              href={socialLinks.dsaGithub || "https://github.com/vikasmanral9876/java-dsa-practice"}
               target="_blank"
               rel="noopener noreferrer"
               id="dsa-github-link"

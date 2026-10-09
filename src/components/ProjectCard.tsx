@@ -13,7 +13,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, isPrimary = false }: ProjectCardProps) {
   const [showAllFeatures, setShowAllFeatures] = useState(false);
-  const demoVideoUrl = project.demoUrl || project.demoVideoUrl;
+  const demoVideoUrl = project.demoUrl;
 
   const getDisplayUrl = () => {
     if (project.liveDemoUrl) {

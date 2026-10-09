@@ -16,7 +16,6 @@ export interface ProjectItem {
   githubUrl?: string;
   liveDemoUrl?: string;
   demoUrl?: string;
-  demoVideoUrl?: string;
   featured: boolean;
   projectType?: 'Software' | 'Hardware / Embedded';
   codeSnippet?: string;
@@ -75,6 +74,7 @@ export interface SocialLinks {
   linkedin: string;
   email: string;
   leetcode?: string;
+  dsaGithub?: string;
 }
 
 export interface PortfolioData {

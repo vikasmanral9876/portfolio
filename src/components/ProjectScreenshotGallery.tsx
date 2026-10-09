@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import {
   Globe,
@@ -31,11 +31,11 @@ export default function ProjectScreenshotGallery({
 }: ProjectScreenshotGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   // Touch tracking for swipe gestures in lightbox
   const touchStartX = useRef<number | null>(null);
@@ -313,6 +313,11 @@ export default function ProjectScreenshotGallery({
           aria-modal="true"
           aria-label={`${projectTitle} screenshot lightbox modal`}
           className="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-md flex flex-col justify-between p-3 sm:p-5 transition-opacity duration-200 animate-in fade-in"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              handleCloseLightbox();
+            }
+          }}
         >
           {/* Lightbox Top Bar */}
           <div className="flex items-center justify-between px-2 sm:px-4 py-2 border-b border-zinc-850 shrink-0">
@@ -356,9 +361,14 @@ export default function ProjectScreenshotGallery({
             </div>
           </div>
 
-          {/* Lightbox Main Stage with Touch Gestures */}
+          {/* Lightbox Main Stage with Touch Gestures & Backdrop Click */}
           <div
-            className="flex-1 relative flex items-center justify-center py-2 sm:py-4 px-1 sm:px-12 overflow-hidden select-none"
+            className="flex-1 relative flex items-center justify-center py-2 sm:py-4 px-1 sm:px-12 overflow-hidden select-none cursor-zoom-out"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                handleCloseLightbox();
+              }
+            }}
             onTouchStart={total > 1 ? handleTouchStart : undefined}
             onTouchMove={total > 1 ? handleTouchMove : undefined}
             onTouchEnd={total > 1 ? handleTouchEnd : undefined}

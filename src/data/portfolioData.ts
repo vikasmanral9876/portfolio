@@ -12,6 +12,7 @@ export const portfolioData: PortfolioData = {
     linkedin: "https://www.linkedin.com/in/vikas-manral",
     email: "vikasmanral9876@gmail.com",
     leetcode: "https://leetcode.com/vikasmanral",
+    dsaGithub: "https://github.com/vikasmanral9876/java-dsa-practice",
   },
 
   about: {
@@ -145,7 +146,7 @@ export const portfolioData: PortfolioData = {
       title: "HirePilot",
       subtitle: "AI-powered job preparation platform",
       description:
-        "An AI-powered full-stack web application designed to help users prepare for job applications through resume workflows, job-description analysis, interview preparation, and AI-assisted career preparation.",
+        "Built an AI-assisted job preparation platform featuring resume upload analysis, role-based interview preparation, and structured technical roadmaps.",
       features: [
         "User registration and login",
         "JWT-based authentication",
@@ -225,7 +226,7 @@ const verifyToken = async (req, res, next) => {
       title: "Full-Stack E-Commerce Application",
       subtitle: "Production E-Commerce Platform with React, Node.js & Sequelize",
       description:
-        "Full-stack e-commerce platform with product browsing, cart, checkout, delivery selection, and order tracking.",
+        "Built a full-stack e-commerce web application featuring product browsing, shopping cart state management, checkout with delivery selection, and order tracking.",
       features: [
         "Product catalog browsing with category filtering and shopping cart state management",
         "Delivery selection, checkout process flow, and order tracking functionality",
@@ -286,7 +287,7 @@ exports.createOrder = async (req, res) => {
       title: "Spott — Event Organizer SaaS",
       subtitle: "Modern Event Organization SaaS Application",
       description:
-        "Modern event organization SaaS application built with Next.js, Convex, Clerk, and Tailwind CSS.",
+        "Built a full-stack event management platform for creating, discovering, and registering for events with real-time data persistence and authentication.",
       features: [
         "User authentication and identity management powered by Clerk",
         "Event organization and event-related workflow management",
@@ -295,7 +296,7 @@ exports.createOrder = async (req, res) => {
       ],
       tags: ["React", "Next.js", "Tailwind CSS", "Convex", "Clerk", "shadcn/ui", "JavaScript"],
       category: "Full-Stack",
-      githubUrl: "https://github.com/vikasmanral9876",
+      githubUrl: "https://github.com/vikasmanral9876/Spott-AI-Event-Organizer-SaaS",
       liveDemoUrl: "https://spott-mocha.vercel.app/",
       featured: true,
       projectType: "Software",
@@ -346,7 +347,7 @@ export const getEventsByUser = query({
       title: "Zone Based Automatic Speed Control Car",
       subtitle: "Physical Embedded Systems & Hardware Project",
       description:
-        "Embedded systems project that uses RFID and ultrasonic sensing to automatically control vehicle speed in restricted zones.",
+        "Designed and built a physical embedded systems prototype using RFID zone detection and ultrasonic sensing to automatically regulate vehicle speed in restricted zones.",
       features: [
         "RFID-based restricted-zone detection using MFRC522 module to recognize zone tags",
         "Automatic vehicle speed reduction inside restricted zones via Arduino Nano and L298N motor driver",
@@ -404,42 +405,12 @@ void loop() {
   journey: [
     {
       id: "j-1",
-      title: "Full-Stack Web Development",
-      subtitle: "React, Next.js, Node.js, Express.js & Databases",
-      period: "Full-Stack Development",
-      category: "fullstack",
-      description:
-        "Building end-to-end web applications with React, Next.js, Node.js, and Express.js, with experience integrating REST APIs, authentication, and databases.",
-      keyPoints: [
-        "Built and deployed full-stack applications using React, Node.js, Express.js, and Sequelize.",
-        "Developed modern web applications with Next.js, Convex, Clerk, and Tailwind CSS.",
-        "Worked across frontend interfaces, backend APIs, authentication, database integration, and application architecture.",
-      ],
-      technologies: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "Convex", "Sequelize"],
-    },
-    {
-      id: "j-2",
-      title: "AI-Powered Application Development",
-      subtitle: "Gemini / AI APIs & Job Preparation Tools",
-      period: "AI Applications",
-      category: "ai",
-      description:
-        "Building full-stack applications that integrate Gemini and other AI APIs into practical workflows such as resume analysis and interview preparation.",
-      keyPoints: [
-        "Built HirePilot, an AI-powered job preparation application with resume analysis and interview preparation workflows.",
-        "Implemented AI API integration for generating interview preparation content and career-focused assistance.",
-        "Integrated authentication, file uploads, backend APIs, and MongoDB alongside AI-powered workflows.",
-      ],
-      technologies: ["Gemini / AI APIs", "React", "Node.js", "Express.js", "MongoDB", "JWT", "Axios", "Multer"],
-    },
-    {
-      id: "j-3",
-      title: "Embedded Systems & Hardware Project",
+      title: "Embedded Systems & Hardware Foundation",
       subtitle: "Electronics & Communication Engineering Physical Project",
-      period: "Hardware / Embedded",
+      period: "Engineering Foundation",
       category: "iot",
       description:
-        "Applied Electronics & Communication Engineering knowledge to design and physically build an RFID-based automatic speed-control vehicle.",
+        "Applied Electronics & Communication Engineering principles to design and physically construct an RFID-based automatic speed-control vehicle, establishing practical foundations in hardware-software interfacing and embedded logic.",
       keyPoints: [
         "Integrated Arduino Nano, MFRC522 RFID reader, L298N motor driver, ultrasonic sensing, and DC motors.",
         "Programmed automatic speed reduction in designated zones and speed restoration outside those zones.",
@@ -448,13 +419,43 @@ void loop() {
       technologies: ["Arduino Nano", "MFRC522 RFID", "L298N Motor Driver", "Ultrasonic Sensor", "LCD", "C"],
     },
     {
+      id: "j-2",
+      title: "Full-Stack Web Development",
+      subtitle: "React, Next.js, Node.js, Express.js & Databases",
+      period: "Full-Stack Development",
+      category: "fullstack",
+      description:
+        "Expanded into modern software development by building end-to-end web applications with React, Next.js, Node.js, and Express.js, integrating REST APIs, authentication, and databases.",
+      keyPoints: [
+        "Built and deployed full-stack applications using React, Node.js, Express.js, and Sequelize.",
+        "Developed modern web applications with Next.js, Convex, Clerk, and Tailwind CSS.",
+        "Worked across frontend interfaces, backend APIs, authentication, database integration, and application architecture.",
+      ],
+      technologies: ["React", "Next.js", "Node.js", "Express.js", "MongoDB", "Convex", "Sequelize"],
+    },
+    {
+      id: "j-3",
+      title: "AI-Assisted Application Workflows",
+      subtitle: "Gemini / AI APIs & Career Preparation Tools",
+      period: "AI Applications",
+      category: "ai",
+      description:
+        "Integrated Gemini and AI APIs into practical full-stack workflows such as resume parsing, role analysis, and interview preparation in HirePilot.",
+      keyPoints: [
+        "Built HirePilot, an AI-powered job preparation application with resume analysis and interview preparation workflows.",
+        "Implemented AI API integration for generating interview preparation content and career-focused assistance.",
+        "Integrated authentication, file uploads, backend APIs, and MongoDB alongside AI-powered workflows.",
+      ],
+      technologies: ["Gemini / AI APIs", "React", "Node.js", "Express.js", "MongoDB", "JWT", "Axios", "Multer"],
+    },
+    {
       id: "j-4",
       title: "Data Structures & Algorithms in Java",
       subtitle: "Problem Solving & Core Computer Science Foundations",
       period: "DSA Practice",
       category: "dsa",
       description:
-        "Regular practice of Data Structures & Algorithms in Java, focused on problem solving, algorithmic thinking, and complexity analysis.",
+        "Dedicated regular practice to Data Structures & Algorithms in Java, focusing on algorithmic problem solving, time and space complexity analysis, and writing clean, efficient code.",
       keyPoints: [
         "Solving problems involving arrays, strings, linked lists, stacks, queues, trees, searching, sorting, and dynamic programming.",
         "Analyzing time and space complexity to improve solution efficiency.",

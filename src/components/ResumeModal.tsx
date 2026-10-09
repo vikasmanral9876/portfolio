@@ -88,7 +88,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-mono font-semibold transition-all shadow-xs active:scale-95 cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-sky-500"
             >
               <Download className="h-3.5 w-3.5" aria-hidden="true" />
-              <span>Download Resume</span>
+              <span className="hidden sm:inline">Download Resume</span>
+              <span className="sm:hidden">Download</span>
             </a>
 
             {/* Close Button */}

@@ -19,9 +19,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Vikas Manral | Full-Stack & Software Developer",
+  title: "Vikas Manral — Full-Stack / Software Developer",
   description:
-    "Portfolio of Vikas Manral — Electronics & Communication Engineering graduate building modern, scalable full-stack web applications with React, Next.js, Node.js, and AI integrations.",
+    "Portfolio of Vikas Manral — Electronics & Communication Engineering graduate building responsive, full-stack web applications with React, Next.js, Node.js, Express.js, MongoDB, REST APIs, and Gemini AI integrations.",
   keywords: [
     "Vikas Manral",
     "Full-Stack Developer",
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     "React",
     "Next.js",
     "Node.js",
+    "Express.js",
     "Tailwind CSS",
     "MongoDB",
     "REST APIs",
@@ -43,15 +44,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://vikasmanral.dev",
-    title: "Vikas Manral | Full-Stack & Software Developer",
+    title: "Vikas Manral — Full-Stack / Software Developer",
     description:
-      "Building Full-Stack Experiences That Solve Real Problems. Explore projects, technical skills, and development journey.",
+      "Portfolio of Vikas Manral — Electronics & Communication Engineering graduate building responsive, full-stack web applications with React, Next.js, Node.js, Express.js, databases, and AI integrations.",
     siteName: "Vikas Manral Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vikas Manral | Full-Stack & Software Developer",
-    description: "Building Full-Stack Experiences That Solve Real Problems.",
+    title: "Vikas Manral — Full-Stack / Software Developer",
+    description: "Portfolio of Vikas Manral — Full-Stack & Software Developer.",
   },
   robots: {
     index: true,

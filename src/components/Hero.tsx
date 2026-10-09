@@ -20,8 +20,9 @@ export default function Hero({ onOpenResume }: HeroProps) {
     'Express.js',
     'MongoDB',
     'Convex',
+    'REST APIs',
     'Java',
-    'Gemini AI',
+    'Gemini / AI APIs',
   ];
 
   return (
@@ -41,12 +42,12 @@ export default function Hero({ onOpenResume }: HeroProps) {
           <div className="lg:col-span-7 flex flex-col items-start space-y-5">
             
             {/* Status & Name Pill */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs text-zinc-300 shadow-xs">
-              <span className="flex h-2 w-2 relative">
+            <div className="inline-flex flex-wrap items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-xl sm:rounded-full bg-zinc-900/90 border border-zinc-800 text-xs text-zinc-300 shadow-xs max-w-full">
+              <span className="flex h-2 w-2 relative shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-zinc-400">Hi, I'm</span>
+              <span className="text-zinc-400">Hi, I&apos;m</span>
               <span className="font-semibold text-white">{name}</span>
               <span className="text-zinc-600">·</span>
               <span className="text-zinc-300">Full-Stack / Software Developer</span>

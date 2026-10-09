@@ -145,7 +145,7 @@ export default function Skills() {
             </span>
           </div>
           <span className="font-mono text-zinc-500 text-[11px]">
-            React • Next.js • Node.js • Express • MongoDB • Java
+            React • Next.js • Node.js • Express.js • MongoDB • Java
           </span>
         </div>
 
